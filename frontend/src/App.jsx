@@ -6,6 +6,8 @@ import Register from "./pages/Register";
 import Detection from "./pages/Detection";
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Profile from "./pages/Profile"; //
+import About from './pages/About'; 
 
 export default function App() {
   return (
@@ -15,6 +17,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/about" element={<About />} />
 
         <Route
           path="/detect"
@@ -24,6 +27,8 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
 
       </Routes>
     </Router>
